@@ -196,13 +196,13 @@ const TowerInfo = {
 		if(obj.slowSize < 4.5)
 			obj.slowSize = 4.5;
 	}, desc:lang[navLang]["tower_hoduck_desc5"]},
-	tower_burger1:{loadFunction:"loadBurgerTower", forSale:true, image:'/images/tower_3.png', name:lang[navLang]["tower_burger_name"], price:4, upgradeCost:6, bulletSpeed:0.05, bulletDamage:0.5, range:4, T:350, animDuration:1, effect: function(obj){
+	tower_burger1:{loadFunction:"loadBurgerTower", forSale:true, image:'/images/tower_3.png', name:lang[navLang]["tower_burger_name"], price:6, upgradeCost:6, bulletSpeed:0.05, bulletDamage:0.5, range:4, T:350, animDuration:1, effect: function(obj){
 		
 	}},
-	tower_burger2:{loadFunction:"loadBurgerTower", forSale:false, image:'/images/tower_3.png', name:lang[navLang]["tower_burger_name"], price:10, upgradeCost:8, bulletSpeed:0.1, bulletDamage:1, range:4, T:325, animDuration:1, effect: function(obj){
+	tower_burger2:{loadFunction:"loadBurgerTower", forSale:false, image:'/images/tower_3.png', name:lang[navLang]["tower_burger_name"], price:12, upgradeCost:7, bulletSpeed:0.1, bulletDamage:1, range:4, T:325, animDuration:1, effect: function(obj){
 		
 	}},
-	tower_burger3:{loadFunction:"loadBurgerTower", forSale:false, image:'/images/tower_3.png', name:lang[navLang]["tower_burger_name"], price:18, upgradeCost:10, bulletSpeed:0.125, bulletDamage:1.5, range:4, T:300, animDuration:1, effect: function(obj){
+	tower_burger3:{loadFunction:"loadBurgerTower", forSale:false, image:'/images/tower_3.png', name:lang[navLang]["tower_burger_name"], price:19, upgradeCost:9, bulletSpeed:0.125, bulletDamage:1.5, range:4, T:300, animDuration:1, effect: function(obj){
 		
 	}},
 	tower_burger4:{loadFunction:"loadBurgerTower", forSale:false, image:'/images/tower_3.png', name:lang[navLang]["tower_burger_name"], price:28, upgradeCost:12, bulletSpeed:0.15, bulletDamage:2, range:4, T:275, animDuration:1, effect: function(obj){
