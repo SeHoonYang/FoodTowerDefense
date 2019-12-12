@@ -66,8 +66,9 @@ function onMouseDown(e) {
 	
 	if(constructing && canConstruct) {
 		if(TowerInfo[tower_name].price <= money) {
+			const tempPos = constructingPlane.position.clone();
 			money -= TowerInfo[tower_name].price;
-			buildTower(tower_name, constructingPlane.position);
+			buildTower(tower_name, tempPos);
 			toggleConstruct(false);
 		} else {
 			giveAlert(lang[navLang]["msg_no_money"]);
