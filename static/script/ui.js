@@ -33,10 +33,11 @@ function getTowerPanelHTML(name, image, price, bulletDamage, T, range, tower_nam
 function getTowerUpgradePopHTML(tower, position) {
 	
 	const towerLevel = parseInt(tower.name[tower.name.length - 1]);
+	const nextTowerName = tower.name.slice(0, tower.name.length - 1) + (towerLevel + 1);
 	
 	return	'<div id="upgrade-panel-wrap" class="upgrade-panel-wrap" style="left: ' + (position.x + 30) + 'px;top: ' + (position.y - 25) + 'px;">' +
 				'<h6 class="upgrade-panel-text">' + TowerInfo[tower.name].name + '<span class="float-right">Lv.' + towerLevel + '</span></h6>' +
-				(TowerInfo[tower.name].upgradeCost != 0 ? '<h6 class="upgrade-panel-text" onclick="upgradeTower(' + tower.position.x + ', ' + tower.position.y + ')">' + lang[navLang]["ui_upgrade"] + ' <span class="float-right text-warning">' + TowerInfo[tower.name].upgradeCost + ' G</span></h6>' : '') +
+				(TowerInfo[tower.name].upgradeCost != 0 ? '<h6 class="upgrade-panel-text" onmouseover="showNextUpgradeInfo(\'' + nextTowerName + '\')" onclick="upgradeTower(' + tower.position.x + ', ' + tower.position.y + ')">' + lang[navLang]["ui_upgrade"] + ' <span class="float-right text-warning">' + TowerInfo[tower.name].upgradeCost + ' G</span></h6>' : '') +
 				'<h6 class="upgrade-panel-text" onclick="sellTower(' + tower.position.x + ', ' + tower.position.y + ')">' + lang[navLang]["ui_sell"] + ' <span class="float-right text-warning">' + Math.floor(TowerInfo[tower.name].price * 0.6) + ' G</span></h6>' +
 			'</div>';
 }
@@ -73,21 +74,32 @@ function displayEnemyUI(enemy) {
 function getTowerPanelInfoHTML() {
 	return	'<center><h6 id="towerName"></h6></center>' +
 			'<br />' +
+			'<center><h6 class="tower-desc-text" id="towerDesc"></h6></center>' +
 			'<h6>' + lang[navLang]["ui_rate"] + ' : <span class="float-right" id="towerSpeed"></span></h6>' +
 			'<h6>' + lang[navLang]["ui_damage"] + ' : <span class="float-right text-danger" id="towerDamage"></span></h6>' +
 			'<h6>' + lang[navLang]["ui_range"] + ' : <span class="float-right" id="towerRange"></span></h6>' +
-			'<h6>' + lang[navLang]["ui_bspeed"] + ' : <span class="float-right" id="towerBulletSpeed"></span></h6>' +
 			'<h6>' + lang[navLang]["ui_price"] + ' : <span class="float-right text-warning" id="towerPrice"></span></h6>';
+}
+
+function showNextUpgradeInfo(nextName) {
+	showInfoPanel();
+	displayTowerUI({name:nextName});
+}
+
+function showInfoPanel(){
+	panelDom.style.opacity = 0.8;
+	panelDom.style.display = "block";
+	panelRemTime = 3000;
 }
 
 function displayTowerUI(tower) {
 	const towerLevel = parseInt(tower.name[tower.name.length - 1]);
 	
+	document.getElementById("towerDesc").innerHTML = tower.name.slice(0, tower.name.length-1) + "_desc" + tower.name[tower.name.length - 1];
 	document.getElementById("towerName").innerHTML = TowerInfo[tower.name].name + " Lv." + towerLevel;
 	document.getElementById("towerSpeed").innerHTML = Math.floor(100000 / TowerInfo[tower.name].T) / 100
 	document.getElementById("towerDamage").innerHTML = TowerInfo[tower.name].bulletDamage;
 	document.getElementById("towerRange").innerHTML = TowerInfo[tower.name].range;
-	document.getElementById("towerBulletSpeed").innerHTML = TowerInfo[tower.name].bulletSpeed;
 	document.getElementById("towerPrice").innerHTML = TowerInfo[tower.name].price;
 }
 

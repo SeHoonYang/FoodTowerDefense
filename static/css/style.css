@@ -228,3 +228,6 @@ li>.info-text{
 	background:#ff3b3c;
 	position:relative;
 }
+.tower-desc-text {
+	font-size:0.8rem;
+}
