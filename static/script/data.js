@@ -43,17 +43,17 @@ const lang = {
 		ui_name : "Name",
 		ui_final_life : "Life",
 		tower_gold_desc1 : "Attacks give you random gold between 0-2.",
-		tower_gold_desc2 : "Attacks give you random gold between 0-4.",
-		tower_gold_desc3 : "Attacks give you random gold between 0-6.",
-		tower_gold_desc4 : "Attacks give you random gold between 0-7.",
-		tower_gold_desc5 : "Attacks give you random gold between 0-8.",
+		tower_gold_desc2 : "Attacks give you random gold between 0-3.",
+		tower_gold_desc3 : "Attacks give you random gold between 0-4.",
+		tower_gold_desc4 : "Attacks give you random gold between 0-5.",
+		tower_gold_desc5 : "Attacks give you random gold between 0-6.",
 		tower_hoduck_desc1 : "Enemy is slowed slightly for 3 seconds.",
 		tower_hoduck_desc2 : "Enemy is slowed slightly for 4 seconds.",
 		tower_hoduck_desc3 : "Enemy is slowed for 5 seconds.",
 		tower_hoduck_desc4 : "Enemy is slowed for 5 seconds.",
 		tower_hoduck_desc5 : "Enemy is slowed for 5 seconds.",
-		tower_pizza_desc1 : "Enemy receives 8 extra damage after 10 hits",
-		tower_pizza_desc2 : "Enemy receives 12 extra damage after 8 hits",
+		tower_pizza_desc1 : "Enemy receives 8 extra damage after 8 hits",
+		tower_pizza_desc2 : "Enemy receives 12 extra damage after 7 hits",
 		tower_pizza_desc3 : "Enemy receives 16 extra damage after 6 hits",
 		tower_pizza_desc4 : "Enemy receives 20 extra damage after 5 hits",
 		tower_pizza_desc5 : "Enemy receives 25 extra damage after 4 hits",
@@ -97,17 +97,17 @@ const lang = {
 		ui_name : "이름",
 		ui_final_life : "최종 Life",
 		tower_gold_desc1 : "공격을 하면 0-2 사이의 랜덤 골드를 지급합니다.",
-		tower_gold_desc2 : "공격을 하면 0-4 사이의 랜덤 골드를 지급합니다.",
-		tower_gold_desc3 : "공격을 하면 0-6 사이의 랜덤 골드를 지급합니다.",
-		tower_gold_desc4 : "공격을 하면 0-7 사이의 랜덤 골드를 지급합니다.",
-		tower_gold_desc5 : "공격을 하면 0-8 사이의 랜덤 골드를 지급합니다.",
+		tower_gold_desc2 : "공격을 하면 0-3 사이의 랜덤 골드를 지급합니다.",
+		tower_gold_desc3 : "공격을 하면 0-4 사이의 랜덤 골드를 지급합니다.",
+		tower_gold_desc4 : "공격을 하면 0-5 사이의 랜덤 골드를 지급합니다.",
+		tower_gold_desc5 : "공격을 하면 0-6 사이의 랜덤 골드를 지급합니다.",
 		tower_hoduck_desc1 : "공격당한 적이 약 3초간 적이 조금 둔화됩니다.",
 		tower_hoduck_desc2 : "공격당한 적이 약 4초간 적이 조금 둔화됩니다.",
 		tower_hoduck_desc3 : "공격당한 적이 약 5초간 적이 조금 둔화됩니다.",
 		tower_hoduck_desc4 : "공격당한 적이 약 5초간 적이 조금 둔화됩니다.",
 		tower_hoduck_desc5 : "공격당한 적이 약 5초간 적이 조금 둔화됩니다.",
-		tower_pizza_desc1 : "공격 이후에 10번의 추가 공격을 가하면 8의 피해를 줍니다.",
-		tower_pizza_desc2 : "공격 이후에 8번의 추가 공격을 가하면 12의 피해를 줍니다.",
+		tower_pizza_desc1 : "공격 이후에 8번의 추가 공격을 가하면 8의 피해를 줍니다.",
+		tower_pizza_desc2 : "공격 이후에 7번의 추가 공격을 가하면 12의 피해를 줍니다.",
 		tower_pizza_desc3 : "공격 이후에 6번의 추가 공격을 가하면 16의 피해를 줍니다.",
 		tower_pizza_desc4 : "공격 이후에 5번의 추가 공격을 가하면 20의 피해를 줍니다.",
 		tower_pizza_desc5 : "공격 이후에 4번의 추가 공격을 가하면 25의 피해를 줍니다.",
@@ -136,28 +136,28 @@ const TowerInfo = {
 	tower_egg5:{loadFunction:"loadEggTower", forSale:false, image:'', name:lang[navLang]["tower_egg_name"], price:40, upgradeCost:0, bulletSpeed:0.09, bulletDamage:14, range:4, T:1100, animDuration:1, effect: function(obj){
 		
 	}},
-	tower_gold1:{loadFunction:"loadGoldTower", forSale:true, image:'/images/tower_2.png', name:lang[navLang]["tower_gold_name"], price:8, upgradeCost:9, bulletSpeed:0.05, bulletDamage:0, range:2, T:7000, animDuration:1, effect: function(obj){
+	tower_gold1:{loadFunction:"loadGoldTower", forSale:true, image:'/images/tower_2.png', name:lang[navLang]["tower_gold_name"], price:7, upgradeCost:7, bulletSpeed:0.05, bulletDamage:0, range:2, T:7000, animDuration:1, effect: function(obj){
 		const gold = Math.floor(Math.random() * 3);
 		createText2D("+" + gold + " Gold", toScreenPosition(obj.threeObject, camera));
 		money += gold;
 	}, desc:lang[navLang]["tower_gold_desc1"]},
-	tower_gold2:{loadFunction:"loadGoldTower", forSale:false, image:'/images/tower_2.png', name:lang[navLang]["tower_gold_name"], price:8, upgradeCost:10, bulletSpeed:0.05, bulletDamage:0, range:2, T:6000, animDuration:1, effect: function(obj){
-		const gold = Math.floor(Math.random() * 5);
+	tower_gold2:{loadFunction:"loadGoldTower", forSale:false, image:'/images/tower_2.png', name:lang[navLang]["tower_gold_name"], price:8, upgradeCost:9, bulletSpeed:0.05, bulletDamage:0, range:2, T:6500, animDuration:1, effect: function(obj){
+		const gold = Math.floor(Math.random() * 4);
 		createText2D("+" + gold + " Gold", toScreenPosition(obj.threeObject, camera));
 		money += gold;
 	}, desc:lang[navLang]["tower_gold_desc2"]},
-	tower_gold3:{loadFunction:"loadGoldTower", forSale:false, image:'/images/tower_2.png', name:lang[navLang]["tower_gold_name"], price:8, upgradeCost:11, bulletSpeed:0.06, bulletDamage:0, range:3, T:5000, animDuration:1, effect: function(obj){
-		const gold = Math.floor(Math.random() * 7);
+	tower_gold3:{loadFunction:"loadGoldTower", forSale:false, image:'/images/tower_2.png', name:lang[navLang]["tower_gold_name"], price:8, upgradeCost:12, bulletSpeed:0.06, bulletDamage:0, range:3, T:6000, animDuration:1, effect: function(obj){
+		const gold = Math.floor(Math.random() * 5);
 		createText2D("+" + gold + " Gold", toScreenPosition(obj.threeObject, camera));
 		money += gold;
 	}, desc:lang[navLang]["tower_gold_desc3"]},
-	tower_gold4:{loadFunction:"loadGoldTower", forSale:false, image:'/images/tower_2.png', name:lang[navLang]["tower_gold_name"], price:8, upgradeCost:12, bulletSpeed:0.06, bulletDamage:0, range:3.5, T:4000, animDuration:1, effect: function(obj){
-		const gold = Math.floor(Math.random() * 8);
+	tower_gold4:{loadFunction:"loadGoldTower", forSale:false, image:'/images/tower_2.png', name:lang[navLang]["tower_gold_name"], price:8, upgradeCost:16, bulletSpeed:0.06, bulletDamage:0, range:3.5, T:5500, animDuration:1, effect: function(obj){
+		const gold = Math.floor(Math.random() * 6);
 		createText2D("+" + gold + " Gold", toScreenPosition(obj.threeObject, camera));
 		money += gold;
 	}, desc:lang[navLang]["tower_gold_desc4"]},
-	tower_gold5:{loadFunction:"loadGoldTower", forSale:false, image:'/images/tower_2.png', name:lang[navLang]["tower_gold_name"], price:8, upgradeCost:0, bulletSpeed:0.07, bulletDamage:0, range:4, T:3000, animDuration:1, effect: function(obj){
-		const gold = Math.floor(Math.random() * 9);
+	tower_gold5:{loadFunction:"loadGoldTower", forSale:false, image:'/images/tower_2.png', name:lang[navLang]["tower_gold_name"], price:8, upgradeCost:0, bulletSpeed:0.07, bulletDamage:0, range:4, T:5000, animDuration:1, effect: function(obj){
+		const gold = Math.floor(Math.random() * 7);
 		createText2D("+" + gold + " Gold", toScreenPosition(obj.threeObject, camera));
 		money += gold;
 	}, desc:lang[navLang]["tower_gold_desc5"]},
@@ -196,19 +196,19 @@ const TowerInfo = {
 		if(obj.slowSize < 4.5)
 			obj.slowSize = 4.5;
 	}, desc:lang[navLang]["tower_hoduck_desc5"]},
-	tower_burger1:{loadFunction:"loadBurgerTower", forSale:true, image:'/images/tower_3.png', name:lang[navLang]["tower_burger_name"], price:8, upgradeCost:10, bulletSpeed:0.05, bulletDamage:0.5, range:4, T:350, animDuration:1, effect: function(obj){
+	tower_burger1:{loadFunction:"loadBurgerTower", forSale:true, image:'/images/tower_3.png', name:lang[navLang]["tower_burger_name"], price:4, upgradeCost:6, bulletSpeed:0.05, bulletDamage:0.5, range:4, T:350, animDuration:1, effect: function(obj){
 		
 	}},
-	tower_burger2:{loadFunction:"loadBurgerTower", forSale:false, image:'/images/tower_3.png', name:lang[navLang]["tower_burger_name"], price:18, upgradeCost:12, bulletSpeed:0.1, bulletDamage:1, range:4, T:325, animDuration:1, effect: function(obj){
+	tower_burger2:{loadFunction:"loadBurgerTower", forSale:false, image:'/images/tower_3.png', name:lang[navLang]["tower_burger_name"], price:10, upgradeCost:8, bulletSpeed:0.1, bulletDamage:1, range:4, T:325, animDuration:1, effect: function(obj){
 		
 	}},
-	tower_burger3:{loadFunction:"loadBurgerTower", forSale:false, image:'/images/tower_3.png', name:lang[navLang]["tower_burger_name"], price:30, upgradeCost:15, bulletSpeed:0.125, bulletDamage:1.5, range:4, T:300, animDuration:1, effect: function(obj){
+	tower_burger3:{loadFunction:"loadBurgerTower", forSale:false, image:'/images/tower_3.png', name:lang[navLang]["tower_burger_name"], price:18, upgradeCost:10, bulletSpeed:0.125, bulletDamage:1.5, range:4, T:300, animDuration:1, effect: function(obj){
 		
 	}},
-	tower_burger4:{loadFunction:"loadBurgerTower", forSale:false, image:'/images/tower_3.png', name:lang[navLang]["tower_burger_name"], price:45, upgradeCost:15, bulletSpeed:0.15, bulletDamage:2, range:4, T:275, animDuration:1, effect: function(obj){
+	tower_burger4:{loadFunction:"loadBurgerTower", forSale:false, image:'/images/tower_3.png', name:lang[navLang]["tower_burger_name"], price:28, upgradeCost:12, bulletSpeed:0.15, bulletDamage:2, range:4, T:275, animDuration:1, effect: function(obj){
 		
 	}},
-	tower_burger5:{loadFunction:"loadBurgerTower", forSale:false, image:'/images/tower_3.png', name:lang[navLang]["tower_burger_name"], price:60, upgradeCost:0, bulletSpeed:0.175, bulletDamage:2.5, range:4, T:250, animDuration:1, effect: function(obj){
+	tower_burger5:{loadFunction:"loadBurgerTower", forSale:false, image:'/images/tower_3.png', name:lang[navLang]["tower_burger_name"], price:40, upgradeCost:0, bulletSpeed:0.175, bulletDamage:2.5, range:4, T:250, animDuration:1, effect: function(obj){
 		
 	}},
 	tower_orange1:{loadFunction:"loadOrangeTower", forSale:true, image:'/images/tower_5.png', name:lang[navLang]["tower_orange_name"], price:10, upgradeCost:10, bulletSpeed:0.025, bulletDamage:10, range:6, T:2750, animDuration:1, effect: function(obj){
@@ -226,22 +226,22 @@ const TowerInfo = {
 	tower_orange5:{loadFunction:"loadOrangeTower", forSale:false, image:'/images/tower_5.png', name:lang[navLang]["tower_orange_name"], price:60, upgradeCost:0, bulletSpeed:0.05, bulletDamage:50, range:10, T:1600, animDuration:1, effect: function(obj){
 		
 	}},
-	tower_pizza1:{loadFunction:"loadPizzaTower", forSale:true, image:'/images/tower_6.png', name:lang[navLang]["tower_pizza_name"], price:10, upgradeCost:10, bulletSpeed:0.125, bulletDamage:0, range:3, T:1500, animDuration:1, effect: function(obj){
+	tower_pizza1:{loadFunction:"loadPizzaTower", forSale:true, image:'/images/tower_6.png', name:lang[navLang]["tower_pizza_name"], price:8, upgradeCost:10, bulletSpeed:0.125, bulletDamage:0, range:3, T:1500, animDuration:1, effect: function(obj){
 		if(obj.remAttackCount == 0) {
-			obj.remAttackCount = 11;
+			obj.remAttackCount = 9;
 			obj.addDamage = 8;
 		}
 		
 	}, desc:lang[navLang]["tower_pizza_desc1"]},
-	tower_pizza2:{loadFunction:"loadPizzaTower", forSale:false, image:'/images/tower_6.png', name:lang[navLang]["tower_pizza_name"], price:20, upgradeCost:10, bulletSpeed:0.15, bulletDamage:0, range:3, T:1250, animDuration:1, effect: function(obj){
+	tower_pizza2:{loadFunction:"loadPizzaTower", forSale:false, image:'/images/tower_6.png', name:lang[navLang]["tower_pizza_name"], price:18, upgradeCost:11, bulletSpeed:0.15, bulletDamage:0, range:3, T:1250, animDuration:1, effect: function(obj){
 		if(obj.remAttackCount >= 9 || obj.remAttackCount == 0) {
-			obj.remAttackCount = 9;
+			obj.remAttackCount = 8;
 		}
 		if(obj.addDamage < 12)
 			obj.addDamage = 12;
 		
 	}, desc:lang[navLang]["tower_pizza_desc2"]},
-	tower_pizza3:{loadFunction:"loadPizzaTower", forSale:false, image:'/images/tower_6.png', name:lang[navLang]["tower_pizza_name"], price:30, upgradeCost:10, bulletSpeed:0.15, bulletDamage:0, range:4, T:1000, animDuration:1, effect: function(obj){
+	tower_pizza3:{loadFunction:"loadPizzaTower", forSale:false, image:'/images/tower_6.png', name:lang[navLang]["tower_pizza_name"], price:29, upgradeCost:11, bulletSpeed:0.15, bulletDamage:0, range:4, T:1000, animDuration:1, effect: function(obj){
 		if(obj.remAttackCount >= 7 || obj.remAttackCount == 0) {
 			obj.remAttackCount = 7;
 		}
@@ -249,7 +249,7 @@ const TowerInfo = {
 			obj.addDamage = 16;
 		
 	}, desc:lang[navLang]["tower_pizza_desc3"]},
-	tower_pizza4:{loadFunction:"loadPizzaTower", forSale:false, image:'/images/tower_6.png', name:lang[navLang]["tower_pizza_name"], price:40, upgradeCost:10, bulletSpeed:0.15, bulletDamage:0, range:5, T:900, animDuration:1, effect: function(obj){
+	tower_pizza4:{loadFunction:"loadPizzaTower", forSale:false, image:'/images/tower_6.png', name:lang[navLang]["tower_pizza_name"], price:40, upgradeCost:15, bulletSpeed:0.15, bulletDamage:0, range:5, T:900, animDuration:1, effect: function(obj){
 		if(obj.remAttackCount >= 6 || obj.remAttackCount == 0) {
 			obj.remAttackCount = 6;
 		}
@@ -257,7 +257,7 @@ const TowerInfo = {
 			obj.addDamage = 20;
 		
 	}, desc:lang[navLang]["tower_pizza_desc4"]},
-	tower_pizza5:{loadFunction:"loadPizzaTower", forSale:false, image:'/images/tower_6.png', name:lang[navLang]["tower_pizza_name"], price:50, upgradeCost:0, bulletSpeed:0.15, bulletDamage:0, range:5, T:800, animDuration:1, effect: function(obj){
+	tower_pizza5:{loadFunction:"loadPizzaTower", forSale:false, image:'/images/tower_6.png', name:lang[navLang]["tower_pizza_name"], price:55, upgradeCost:0, bulletSpeed:0.15, bulletDamage:0, range:5, T:800, animDuration:1, effect: function(obj){
 		if(obj.remAttackCount >= 5 || obj.remAttackCount == 0) {
 			obj.remAttackCount = 5;
 		}
@@ -265,19 +265,19 @@ const TowerInfo = {
 			obj.addDamage = 25;
 		
 	}, desc:lang[navLang]["tower_pizza_desc5"]},
-	tower_steak1:{loadFunction:"loadSteakTower", forSale:true, image:'/images/tower_7.png', name:lang[navLang]["tower_steak_name"], price:15, upgradeCost:15, bulletSpeed:0.1, bulletDamage:2, range:3, T:550, animDuration:1, effect: function(obj){
+	tower_steak1:{loadFunction:"loadSteakTower", forSale:true, image:'/images/tower_7.png', name:lang[navLang]["tower_steak_name"], price:10, upgradeCost:10, bulletSpeed:0.1, bulletDamage:2, range:3, T:550, animDuration:1, effect: function(obj){
 		
 	}},
-	tower_steak2:{loadFunction:"loadSteakTower", forSale:false, image:'/images/tower_7.png', name:lang[navLang]["tower_steak_name"], price:30, upgradeCost:15, bulletSpeed:0.125, bulletDamage:3, range:3, T:500, animDuration:1, effect: function(obj){
+	tower_steak2:{loadFunction:"loadSteakTower", forSale:false, image:'/images/tower_7.png', name:lang[navLang]["tower_steak_name"], price:20, upgradeCost:10, bulletSpeed:0.125, bulletDamage:3, range:3, T:500, animDuration:1, effect: function(obj){
 		
 	}},
-	tower_steak3:{loadFunction:"loadSteakTower", forSale:false, image:'/images/tower_7.png', name:lang[navLang]["tower_steak_name"], price:45, upgradeCost:15, bulletSpeed:0.15, bulletDamage:4, range:3, T:450, animDuration:1, effect: function(obj){
+	tower_steak3:{loadFunction:"loadSteakTower", forSale:false, image:'/images/tower_7.png', name:lang[navLang]["tower_steak_name"], price:30, upgradeCost:15, bulletSpeed:0.15, bulletDamage:4, range:3, T:450, animDuration:1, effect: function(obj){
 		
 	}},
-	tower_steak4:{loadFunction:"loadSteakTower", forSale:false, image:'/images/tower_7.png', name:lang[navLang]["tower_steak_name"], price:60, upgradeCost:15, bulletSpeed:0.175, bulletDamage:5, range:4, T:400, animDuration:1, effect: function(obj){
+	tower_steak4:{loadFunction:"loadSteakTower", forSale:false, image:'/images/tower_7.png', name:lang[navLang]["tower_steak_name"], price:45, upgradeCost:15, bulletSpeed:0.175, bulletDamage:5, range:4, T:400, animDuration:1, effect: function(obj){
 		
 	}},
-	tower_steak5:{loadFunction:"loadSteakTower", forSale:false, image:'/images/tower_7.png', name:lang[navLang]["tower_steak_name"], price:75, upgradeCost:0, bulletSpeed:0.2, bulletDamage:6, range:4, T:350, animDuration:1, effect: function(obj){
+	tower_steak5:{loadFunction:"loadSteakTower", forSale:false, image:'/images/tower_7.png', name:lang[navLang]["tower_steak_name"], price:60, upgradeCost:0, bulletSpeed:0.2, bulletDamage:6, range:4, T:350, animDuration:1, effect: function(obj){
 		
 	}}
 };
