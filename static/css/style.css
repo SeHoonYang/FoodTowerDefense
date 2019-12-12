@@ -165,6 +165,13 @@ li>.info-text{
 	padding: 12px;
 	cursor: pointer;
 }
+.upgrade-panel-text.disabled{
+	background:#afafaf;
+}
+.upgrade-panel-text.disabled:hover{
+	background:#afafaf;
+	border-radius: 0px;
+}
 .upgrade-panel-text:hover{
 	background:#cfcfcf;
 	border-radius: 4px;
