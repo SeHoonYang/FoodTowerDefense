@@ -94,8 +94,10 @@ function showInfoPanel(){
 
 function displayTowerUI(tower) {
 	const towerLevel = parseInt(tower.name[tower.name.length - 1]);
+	const descText = lang[navLang][tower.name.slice(0, tower.name.length-1) + "_desc" + tower.name[tower.name.length - 1]];
 	
-	document.getElementById("towerDesc").innerHTML = tower.name.slice(0, tower.name.length-1) + "_desc" + tower.name[tower.name.length - 1];
+	if(descText != undefined)
+		document.getElementById("towerDesc").innerHTML = descText;
 	document.getElementById("towerName").innerHTML = TowerInfo[tower.name].name + " Lv." + towerLevel;
 	document.getElementById("towerSpeed").innerHTML = Math.floor(100000 / TowerInfo[tower.name].T) / 100
 	document.getElementById("towerDamage").innerHTML = TowerInfo[tower.name].bulletDamage;
