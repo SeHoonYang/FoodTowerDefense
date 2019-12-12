@@ -38,7 +38,7 @@ function getTowerUpgradePopHTML(tower, position) {
 	
 	return	'<div id="upgrade-panel-wrap" class="upgrade-panel-wrap" style="left: ' + (position.x + 30) + 'px;top: ' + (position.y - 25) + 'px;">' +
 				'<h6 class="upgrade-panel-text">' + TowerInfo[tower.name].name + '<span class="float-right">Lv.' + towerLevel + '</span></h6>' +
-				'<h6 class="upgrade-panel-text disabled"' + (canUpgrade ? ('onmouseover="showNextUpgradeInfo(\'' + nextTowerName + '\')" onclick="upgradeTower(' + tower.position.x + ', ' + tower.position.y + ')"') : '') + '>' + lang[navLang]["ui_upgrade"] + (canUpgrade ? ' <span class="float-right text-warning">' + TowerInfo[tower.name].upgradeCost + ' G</span></h6>' : '</h6>') +
+				'<h6 class="upgrade-panel-text' + (canUpgrade ? "" : " disabled") + '"' + (canUpgrade ? ('onmouseover="showNextUpgradeInfo(\'' + nextTowerName + '\')" onclick="upgradeTower(' + tower.position.x + ', ' + tower.position.y + ')"') : '') + '>' + lang[navLang]["ui_upgrade"] + (canUpgrade ? ' <span class="float-right text-warning">' + TowerInfo[tower.name].upgradeCost + ' G</span></h6>' : '</h6>') +
 				'<h6 class="upgrade-panel-text" onclick="sellTower(' + tower.position.x + ', ' + tower.position.y + ')">' + lang[navLang]["ui_sell"] + ' <span class="float-right text-warning">' + Math.floor(TowerInfo[tower.name].price * 0.6) + ' G</span></h6>' +
 			'</div>';
 }
