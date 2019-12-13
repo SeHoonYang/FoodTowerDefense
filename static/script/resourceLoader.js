@@ -368,6 +368,13 @@ function loadCommon(name, list, settingFunction){
 		function (glb) {
 			list[name] = settingFunction(glb);
 			
+			// Add to background
+			for(i = 0; i < 8; i++) {
+				const back = list[name].clone();
+				scene.add(back);
+				backgroundModels.push(back);
+			}
+			
 			checkAllLoad();
 		},
 		function (success) {
